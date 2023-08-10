@@ -42,6 +42,7 @@
  */
 
 require('dotenv').config();
+
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const { INFURA_API_KEY, MNEMONIC } = process.env;
 
@@ -77,7 +78,7 @@ module.exports = {
       provider: () =>
         new HDWalletProvider(
           process.env.MNEMONIC,
-          `wss://aurora-testnet.infura.io/ws/v3/${process.env.API_KEY}`
+          `https://aurora-testnet.infura.io/v3/${process.env.API_KEY}`
           
         ),
       network_id: 0x4e454153, // Aurora testnet ID
